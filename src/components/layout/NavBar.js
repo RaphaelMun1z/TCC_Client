@@ -5,7 +5,7 @@ import logo from '../../img/logo.png'
 import { useState, useRef } from 'react';
 import { RxHamburgerMenu, RxGear } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
-import { BsCart2, BsGearFill } from "react-icons/bs";
+import { BsGearFill } from "react-icons/bs";
 
 function NavBar() {
 
@@ -56,31 +56,6 @@ function NavBar() {
         handleDropdownClose();
     }
 
-    const [cartItems, setCartItems] = useState([
-        {
-            id: 1,
-            name: "Product 1",
-            imageUrl: "https://via.placeholder.com/150",
-            price: 10,
-        },
-        {
-            id: 2,
-            name: "Product 2",
-            imageUrl: "https://via.placeholder.com/150",
-            price: 20,
-        },
-        {
-            id: 3,
-            name: "Product 3",
-            imageUrl: "https://via.placeholder.com/150",
-            price: 30,
-        },
-    ]);
-
-    const getTotal = () => {
-        return cartItems.reduce((acc, item) => acc + item.price, 0);
-    };
-
     const [hidden, setHidden] = useState(false);
 
     const toggleHidden = () => {
@@ -93,31 +68,28 @@ function NavBar() {
                 <div className={styles.navMobile} onClick={handleToggle}>
                     {!isActive ? <RxHamburgerMenu /> : <MdClose />}
                 </div>
-                <div className={isActive ? `${styles.containerSearchBar} ${styles.active}` : `${styles.containerSearchBar}`}>
+                <div className={isActive ? `${styles.navBarControl} ${styles.active}` : `${styles.navBarControl}`}>
 
                     <ul className={styles.list}>
                         <li className={styles.item}>
                             <Link to="/">Início</Link>
                         </li>
                         <li className={styles.item}>
-                            <Link to="/">Doadores</Link>
+                            <Link to="/">Doações</Link>
                         </li>
                         <li className={styles.item}>
-                            <Link to="/">Donatários</Link>
+                            <Link to="/">Projetos</Link>
                         </li>
                         <li className={styles.list_buttonmenu}>
                             <div className="dropdown">
-                                <button className={styles.dropdown_btn} onMouseEnter={handleDropdownOpen} onMouseLeave={handleDropdownClose}>Buscar</button>
+                                <button className={styles.dropdown_btn} onMouseEnter={handleDropdownOpen} onMouseLeave={handleDropdownClose}>Mais</button>
                                 {isOpen && (
                                     <div className={styles.dropdown_menu} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                         <div className={styles.dropdown_option} onClick={() => handleOptionClick('Option 1')}>
-                                            <Link to="/sections">Sessões</Link>
+                                            <Link to="/">Doadores</Link>
                                         </div>
                                         <div className={styles.dropdown_option} onClick={() => handleOptionClick('Option 2')}>
-                                            <Link to="/category">Categorias</Link>
-                                        </div>
-                                        <div className={styles.dropdown_option} onClick={() => handleOptionClick('Option 3')}>
-                                            <Link to="/products">Produtos</Link>
+                                            <Link to="/">Donatários</Link>
                                         </div>
                                     </div>
                                 )}
@@ -126,10 +98,9 @@ function NavBar() {
                     </ul>
                 </div>
                 <Link to="/">
-                    <img className={styles.navbarImage} src={logo} alt="Logo FindForMe" />
+                    <img src={logo} alt="Logo FindForMe" />
                 </Link>
-                <div className={isActive ? `${styles.containerSearchBar} ${styles.active}` : `${styles.containerSearchBar}`}>
-
+                <div className={isActive ? `${styles.navBarControl} ${styles.active}` : `${styles.navBarControl}`}>
                     <ul className={styles.list}>
                         <li className={styles.item}>
                             <Link to="/about">Sobre Nós</Link>
@@ -157,7 +128,16 @@ function NavBar() {
                                     <div className={styles.cart_items}>
                                         <div className={styles.cart_item}>
                                             <li className={styles.item}>
-                                                <Link to="/management">Gerenciar</Link>
+                                                <Link to="/management">Gerenciar perfil</Link>
+                                            </li>
+                                            <li className={`${styles.item} ${styles.item_donates} `}>
+                                                <Link to="/management">Minhas doações</Link>
+                                            </li>
+                                            <li className={`${styles.item} ${styles.item_in} `}>
+                                                <Link to="/management">Entrar</Link>
+                                            </li>
+                                            <li className={`${styles.item} ${styles.item_exit}`}>
+                                                <Link to="/management">Sair</Link>
                                             </li>
                                         </div>
                                     </div>

@@ -1,13 +1,12 @@
 //import Carousel from "./Carousel/Carousel"
-import { useRef } from 'react';
-import Landing from "./Landing/Landing"
-import ContentSection from "./ContentSection/ContentSection.js"
-import styles from './Home.module.css'
-import ContentCards from "./ContentCards/ContentCards"
+//import styles from './Home.module.scss'
 
-import img1 from '../../../img/imgContent1.png'
-import img2 from '../../../img/imgContent2.png'
-import img3 from '../../../img/imgContent3.png'
+import Landing from "./Landing/Landing"
+import ContentCards from "./ContentCards/ContentCards"
+import HowItWorks from '../HowItWorks/HowItWorks';
+import Contact from '../Contact/Contact';
+
+//import ContentSection from "./ContentSection/ContentSection.js"
 
 function Home() {
     return (
@@ -38,35 +37,8 @@ function Home() {
             />
             */}
 
-
-
-<div class="line-step">
-  <div class="step active">
-    <svg class="line-svg" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="45" fill="#007bff" />
-    </svg>
-    Passo 1
-  </div>
-  <div class="step">
-    <svg class="line-svg" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="45" stroke="#ccc" fill="none" />
-    </svg>
-    Passo 2
-  </div>
-  <div class="step">
-    <svg class="line-svg" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="45" stroke="#ccc" fill="none" />
-    </svg>
-    Passo 3
-  </div>
-  <div class="step">
-    <svg class="line-svg" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="45" stroke="#ccc" fill="none" />
-    </svg>
-    Passo 4
-  </div>
-</div>
-
+            <HowItWorks/>
+            <Contact/>
 
         </>
     )

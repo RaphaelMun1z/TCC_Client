@@ -8,13 +8,11 @@
   justify-content: center;
   align-items: center;
   background: rgb(15, 138, 70);
-  background: linear-gradient(
-    90deg,
-    rgba(15, 138, 70, 1) 0%,
-    rgba(0, 166, 81, 1) 14%,
-    rgba(0, 166, 81, 1) 87%,
-    rgba(15, 138, 70, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(15, 138, 70, 1) 0%,
+      rgba(0, 166, 81, 1) 14%,
+      rgba(0, 166, 81, 1) 87%,
+      rgba(15, 138, 70, 1) 100%);
   flex-wrap: wrap;
 
   .titleContainer {
@@ -36,6 +34,7 @@
   height: 455px;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .card_hover {
@@ -215,4 +214,16 @@
 
 .active circle {
   stroke: #007bff;
+}
+
+
+@media (max-width: 768px) {
+  .containerCards {
+    gap: 50px;
+    height: fit-content;
+
+    .card_hover {
+      height: 455px;
+    }
+  }
 }
