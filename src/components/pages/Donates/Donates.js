@@ -28,11 +28,14 @@ function Products() {
                     </p>
                 </div>
                 <div className={styles.containerProds}>
-                    {
-                        products.map((data) => (
-                            <DonateCard />
-                        ))
-                    }
+                    <DonateCard />
+                    <DonateCard />
+                    <DonateCard />
+                    <DonateCard />
+                    <DonateCard />
+                    <DonateCard />
+                    <DonateCard />
+                    <DonateCard />
                 </div>
             </section>
         </>

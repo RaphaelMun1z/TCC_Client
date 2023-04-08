@@ -1,8 +1,27 @@
-import styles from './CreateSection.module.css'
-import { Link } from "react-router-dom"
+.container {
+    padding: 2em;
+    flex-wrap: wrap;
+    width: 100% !important;
+    height: fit-content;
+}
 
-function CreateSection() {
-    return (
+.secTitle h1 {
+    font-size: 3em;
+    color: #222;
+    position: relative;
+    width: min-content;
+    text-align: left;
+    color: #222;
+}
+
+.secTitle p {
+    color: rgba(34, 34, 34, .7);
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+/*
+
         <section className={styles.container}>
             <div className={styles.secTitle}>
                 <h1>Área de gerenciamento</h1>
@@ -14,7 +33,4 @@ function CreateSection() {
                 <Link to="/newproduct">Cadastrar produto</Link>
             </div>
         </section>
-    )
-}
-
-export default CreateSection
+*/

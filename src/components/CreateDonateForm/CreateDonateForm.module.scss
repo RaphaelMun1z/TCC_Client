@@ -1,0 +1,86 @@
+$corFundo: #87c8e0;
+$corTexto: linear-gradient(90deg, rgb(15, 138, 70) 0%, rgb(0, 166, 81) 14%, rgb(0, 166, 81) 87%, rgb(15, 138, 70) 100%);
+
+.contact {
+  background: $corTexto;
+  color: $corFundo;
+  padding: 5em 3em;
+  min-height: 100vh;
+  width: 100%;
+
+  &__title {
+    color: #fff;
+    font-size: 40pt;
+    text-align: left;
+    align-self: flex-start;
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin: 0 0 50px 0;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+
+    &Group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      width: 100%;
+      color: black !important;
+
+      &Label {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      &Input,
+      &Textarea {
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 18px;
+        background-color: $corFundo;
+        color: $corTexto;
+        resize: none;
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 2px $corTexto;
+        }
+      }
+
+      &Textarea {
+        height: 200px;
+      }
+    }
+
+    &Button {
+      background-color: $corFundo;
+      color: $corTexto;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($corFundo, 5%);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    &__form {
+      max-width: inherit !important;
+      width: 100% !important;
+    }
+  }
+}

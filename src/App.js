@@ -18,8 +18,7 @@ import Projects from './components/pages/Projects/Projects';
 import MajorDonors from './components/pages/MajorDonors/MajorDonors';
 import MajorOrgs from './components/pages/MajorOrgs/MajorOrgs';
 
-// Others
-import Adm from './components/pages/Adm/Adm'
+import AdmArea from './components/pages/AdmArea/AdmArea'
 import NewDonate from './components/pages/Donates/NewDonate';
 
 function App() {
@@ -40,7 +39,7 @@ function App() {
           <Route path='/majordonors' element={<MajorDonors />}></Route>
           <Route path='/majororgs' element={<MajorOrgs />}></Route>
 
-          <Route path='/management' element={<Adm />}></Route>
+          <Route path='/management' element={<AdmArea />}></Route>
           <Route path='/newdonate' element={<NewDonate />}></Route>
 
         </Routes>

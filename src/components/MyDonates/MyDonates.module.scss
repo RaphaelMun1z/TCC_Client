@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     width: 100% !important;
     height: fit-content;
+    background: whitesmoke !important;
 }
 
 .secTitle h1 {
@@ -10,12 +11,22 @@
     color: #222;
     position: relative;
     width: min-content;
-    text-align: left;
+    text-align: center;
     color: #222;
+    margin-top: 20px;
 }
 
 .secTitle p {
     color: rgba(34, 34, 34, .7);
     max-width: 500px;
-    margin-top: 20px;
+}
+
+.containerProds {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin: 2em 2em 2em 0;
+    flex-wrap: wrap;
+    gap: 1%;
 }
