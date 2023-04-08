@@ -1,9 +1,9 @@
-import styles from './Products.module.css'
-import ProductCard from './ProductCard';
+import styles from './Donates.module.scss'
+import DonateCard from './DonateCard';
 
 import api from '../../../api'
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 function Products() {
 
@@ -22,15 +22,15 @@ function Products() {
         <>
             <section className={styles.container}>
                 <div className={styles.secTitle}>
-                    <h1>Produtos</h1>
+                    <h1>Doações</h1>
                     <p>
-                        Aqui você encontra os melhores produtos do mercado nacional. Ao clicar em <b>Comparar</b> você será redirecionado as comparações automáticas de qualidade da categoria do respectivo produto.
+                        Aqui você encontra <b>Doações</b> disponíveis para coleta.
                     </p>
                 </div>
                 <div className={styles.containerProds}>
                     {
                         products.map((data) => (
-                            <ProductCard title={data.title} price={data.price} description={data.description}/>
+                            <DonateCard />
                         ))
                     }
                 </div>

@@ -3,7 +3,7 @@ import styles from './ContentCards.module.scss'
 function ContentCards() {
     return (
         <section className={styles.container}>
-            <h1 className={styles.titleContainer}>Quem somos?</h1>
+            <h1 className={styles.titleContainer}>Sobre Nós</h1>
             <div className={styles.containerCards}>
                 
                 <div className={styles.card_hover}>

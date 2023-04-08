@@ -75,10 +75,10 @@ function NavBar() {
                             <Link to="/">Início</Link>
                         </li>
                         <li className={styles.item}>
-                            <Link to="/">Doações</Link>
+                            <Link to="/donates">Doações</Link>
                         </li>
                         <li className={styles.item}>
-                            <Link to="/">Projetos</Link>
+                            <Link to="/projects">Projetos</Link>
                         </li>
                         <li className={styles.list_buttonmenu}>
                             <div className="dropdown">
@@ -86,10 +86,10 @@ function NavBar() {
                                 {isOpen && (
                                     <div className={styles.dropdown_menu} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                         <div className={styles.dropdown_option} onClick={() => handleOptionClick('Option 1')}>
-                                            <Link to="/">Doadores</Link>
+                                            <Link to="/majordonors">Principais Doadores</Link>
                                         </div>
                                         <div className={styles.dropdown_option} onClick={() => handleOptionClick('Option 2')}>
-                                            <Link to="/">Donatários</Link>
+                                            <Link to="/majororgs">Principais Organizações</Link>
                                         </div>
                                     </div>
                                 )}
@@ -98,7 +98,7 @@ function NavBar() {
                     </ul>
                 </div>
                 <Link to="/">
-                    <img src={logo} alt="Logo FindForMe" />
+                    <img src={logo} alt="Logo FindForMe" className={!isActive ? `${styles.active}` : `${styles.notactive}` } />
                 </Link>
                 <div className={isActive ? `${styles.navBarControl} ${styles.active}` : `${styles.navBarControl}`}>
                     <ul className={styles.list}>
@@ -106,7 +106,7 @@ function NavBar() {
                             <Link to="/about">Sobre Nós</Link>
                         </li>
                         <li className={styles.item}>
-                            <Link to="/">Como funciona</Link>
+                            <Link to="/howitworks">Como funciona</Link>
                         </li>
                         <li className={styles.item}>
                             <Link to="/contact">Contato</Link>

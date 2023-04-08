@@ -1,7 +1,7 @@
-import styles from './NewProduct.module.css'
+import styles from './NewDonate.module.css'
 import { useState } from 'react';
 
-function NewProduct() {
+function NewDonate() {
 
     const [formData, setFormData] = useState({});
 
@@ -117,4 +117,4 @@ function NewProduct() {
     )
 }
 
-export default NewProduct
+export default NewDonate

@@ -6,6 +6,20 @@
     flex-wrap: wrap;
 }
 
+.container section:nth-child(even){
+    background-color: #fff;
+    background: linear-gradient(90deg, rgb(15, 138, 70) 0%, rgb(0, 166, 81) 14%, rgb(0, 166, 81) 87%, rgb(15, 138, 70) 100%);
+}
+
+.container section:nth-child(odd){
+    background: rgb(171,202,213);
+    background: linear-gradient(90deg, rgba(171,202,213,1) 0%, rgba(135,200,224,1) 35%, rgba(89,164,191,1) 100%); 
+}
+
+.container section:nth-child(1){
+    padding-top: calc(5em + 20px);
+}
+
 .mNav {
     margin-top: 5em;
 }

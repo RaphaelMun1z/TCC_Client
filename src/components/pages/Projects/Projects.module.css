@@ -28,11 +28,12 @@
 
 .containerSections {
     position: relative;
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     width: 100%;
     height: fit-content;
     justify-content: space-between;
+    background: whitesmoke !important;
 }
 
 .secTitle{
@@ -44,7 +45,7 @@
     font-size: 3em;
     color: #222;
     position: relative;
-    width: min-content;
+    width: fit-content;
     text-align: center;
     color: #222;
 }

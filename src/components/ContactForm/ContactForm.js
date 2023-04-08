@@ -1,6 +1,6 @@
-import styles from './Contact.module.scss'
+import styles from './ContactForm.module.scss'
 
-function Contact() {
+function ContactForm() {
     return (
         <section className={styles.contact}>
             <h1 className={styles.contact__title}>Alguma dúvida?</h1>
@@ -23,7 +23,7 @@ function Contact() {
     )
 }
 
-export default Contact
+export default ContactForm
 
 
 

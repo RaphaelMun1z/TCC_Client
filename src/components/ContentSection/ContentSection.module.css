@@ -6,12 +6,12 @@
     margin: 0;
     flex-wrap: wrap;
     background-color: #fff;
-    background: radial-gradient(circle, rgba(254, 254, 254, 1) 0%, rgba(231, 228, 228, 1) 53%, rgba(226, 217, 217, 1) 100%);
+    background: linear-gradient(90deg, rgb(15, 138, 70) 0%, rgb(0, 166, 81) 14%, rgb(0, 166, 81) 87%, rgb(15, 138, 70) 100%);
 }
 
 .sectionDark {
-    background-color: #222;
-    background: linear-gradient(90deg, rgba(34, 34, 34, 1) 0%, rgba(47, 41, 41, 1) 53%, rgba(57, 56, 56, 1) 100%);
+    background: rgb(171,202,213);
+    background: linear-gradient(90deg, rgba(171,202,213,1) 0%, rgba(135,200,224,1) 35%, rgba(89,164,191,1) 100%); 
 }
 
 .containerContent {
@@ -33,7 +33,7 @@
 }
 
 .insideContainerContent>h1 {
-    color: #222;
+    color: #fff;
     font-size: 30pt;
     pointer-events: none;
 }
@@ -47,7 +47,7 @@
 }
 
 .insideContainerContent>p {
-    color: rgba(34, 34, 34, .8);
+    color: #fff;
     font-size: 13pt;
     margin: 10px 0;
     pointer-events: none;
@@ -72,13 +72,13 @@
 }
 
 .insideContainerContent>.link>a {
-    color: inherit;
+    color: #222;
     text-decoration: none;
     width: fit-content;
     height: fit-content;
     border-radius: 10px;
     padding: .5em 1em .5em 1.5em;
-    background-color: #222;
+    background-color: #fff;
     transition: all .1s ease-in-out;
     display: flex;
     align-items: center;
