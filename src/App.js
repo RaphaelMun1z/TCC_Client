@@ -20,6 +20,11 @@ import MajorOrgs from './components/pages/MajorOrgs/MajorOrgs';
 
 import AdmArea from './components/pages/AdmArea/AdmArea'
 import NewDonate from './components/pages/Donates/NewDonate';
+import Signin from './components/pages/Signin/Signin';
+import Signup from './components/pages/Signup/Signup';
+import Profile from './components/pages/Profile/Profile';
+
+import PageNotFound from './components/layout/PageNotFound';
 
 function App() {
   return (
@@ -40,7 +45,13 @@ function App() {
           <Route path='/majororgs' element={<MajorOrgs />}></Route>
 
           <Route path='/management' element={<AdmArea />}></Route>
+          <Route path='/profile' element={<Profile />}></Route>
           <Route path='/newdonate' element={<NewDonate />}></Route>
+
+          <Route path='/signin' element={<Signin />}></Route>
+          <Route path='/signup' element={<Signup />}></Route>
+
+          <Route path="*" element={<PageNotFound />} />
 
         </Routes>
       </Container>

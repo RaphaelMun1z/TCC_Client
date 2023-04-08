@@ -128,16 +128,19 @@ function NavBar() {
                                     <div className={styles.cart_items}>
                                         <div className={styles.cart_item}>
                                             <li className={styles.item}>
-                                                <Link to="/management">Gerenciar perfil</Link>
+                                                <Link to="/profile">Gerenciar perfil</Link>
                                             </li>
                                             <li className={`${styles.item} ${styles.item_donates} `}>
                                                 <Link to="/management">Minhas doações</Link>
                                             </li>
                                             <li className={`${styles.item} ${styles.item_in} `}>
-                                                <Link to="/management">Entrar</Link>
+                                                <Link to="/signin">Entrar</Link>
+                                            </li>
+                                            <li className={`${styles.item} ${styles.item_in} `}>
+                                                <Link to="/signup">Inscrever-se</Link>
                                             </li>
                                             <li className={`${styles.item} ${styles.item_exit}`}>
-                                                <Link to="/management">Sair</Link>
+                                                <Link to="/logout">Sair</Link>
                                             </li>
                                         </div>
                                     </div>

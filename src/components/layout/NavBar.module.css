@@ -214,7 +214,6 @@
     flex-direction: column;
     overflow-y: inherit;
     overflow-x: hidden;
-    max-height: 250px;
 }
 
 .cart_dropdown .empty_message {
