@@ -1,65 +1,32 @@
+import React, { useContext } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify"
+import { AuthContext } from './Contexts/AuthContext';
 
+import NavBar from './components/layout/NavBar'
+import Footer from './components/layout/Footer'
 
-// Default
-import Container from './components/layout/Container'
-import NavBar from './components/layout/NavBar';
-import Footer from './components/layout/Footer';
-
-
-// Pages
-import Home from './components/pages/Home/Home'
-import About from './components/pages/About'
-import HowWorks from './components/pages/HowWorks/HowWorks';
-import Contact from './components/pages/Contact'
-
-import Donates from './components/pages/Donates/Donates';
-import Projects from './components/pages/Projects/Projects';
-import MajorDonors from './components/pages/MajorDonors/MajorDonors';
-import MajorOrgs from './components/pages/MajorOrgs/MajorOrgs';
-
-import AdmArea from './components/pages/AdmArea/AdmArea'
-import NewDonate from './components/pages/Donates/NewDonate';
-import Signin from './components/pages/Signin/Signin';
-import Signup from './components/pages/Signup/Signup';
-import Profile from './components/pages/Profile/Profile';
-
-import PageNotFound from './components/layout/PageNotFound';
+import PublicRoutes from './Routes/PublicRoutes';
+import PrivateRoutes from './Routes/PrivateRoutes';
+import Container from './components/layout/Container';
 
 function App() {
+  const { auth } = useContext(AuthContext)
+
   return (
     <Router>
 
-      <NavBar />
-
-      <Container customClass="min-height">
-        <Routes>
-          <Route exact path='/' element={<Home />}></Route>
-          <Route path='/about' element={<About />}></Route>
-          <Route path='/howitworks' element={<HowWorks />}></Route>
-          <Route path='/contact' element={<Contact />}></Route>
-
-          <Route path='/donates' element={<Donates />}></Route>
-          <Route path='/projects' element={<Projects />}></Route>
-          <Route path='/majordonors' element={<MajorDonors />}></Route>
-          <Route path='/majororgs' element={<MajorOrgs />}></Route>
-
-          <Route path='/management' element={<AdmArea />}></Route>
-          <Route path='/profile' element={<Profile />}></Route>
-          <Route path='/newdonate' element={<NewDonate />}></Route>
-
-          <Route path='/signin' element={<Signin />}></Route>
-          <Route path='/signup' element={<Signup />}></Route>
-
-          <Route path="*" element={<PageNotFound />} />
-
-        </Routes>
+      <Container customClass="min-height" >
+        <NavBar />
+        {auth ? <PrivateRoutes /> : <PublicRoutes />}
+        <Footer />
       </Container>
 
-      <Footer />
 
+      <ToastContainer />
     </Router>
-  );
+  )
 }
 
 export default App;

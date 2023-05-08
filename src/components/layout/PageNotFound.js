@@ -1,5 +1,6 @@
 import styles from './PageNotFound.module.scss'
 import img1 from '../../img/404.png'
+import LogoutButton from "../LogoutButton/LogoutButton"
 
 const PageNotFound = () => {
   return (
@@ -9,6 +10,7 @@ const PageNotFound = () => {
         <p className={styles.message}>
           Desculpe, a página que você está procurando não existe. Por favor, verifique a URL e tente novamente.
         </p>
+        <LogoutButton />
     </div>
   );
 };

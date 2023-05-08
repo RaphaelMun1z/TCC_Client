@@ -1,22 +1,9 @@
 import styles from './Donates.module.scss'
 import DonateCard from './DonateCard';
 
-import api from '../../../api'
-
 import { useEffect, useState } from 'react';
 
 function Products() {
-
-    const [products, setProducts] = useState([])
-
-    useEffect(() => {
-        api.get('product').then(({ data }) => {
-            setProducts(data)
-        })
-        console.log(products)
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
 
     return (
         <>

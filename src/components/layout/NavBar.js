@@ -1,29 +1,38 @@
-import { Link } from 'react-router-dom'
 import Container from './Container'
+import { Link } from 'react-router-dom'
+import { useState, useRef, useContext } from 'react';
+import { AuthContext } from '../../Contexts/AuthContext';
+
+// Styles & Image
 import styles from './NavBar.module.css'
 import logo from '../../img/logo.png'
-import { useState, useRef } from 'react';
+
+// Icons
 import { RxHamburgerMenu, RxGear } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { BsGearFill } from "react-icons/bs";
 
-function NavBar() {
+// Components
+import LogoutButton from '../LogoutButton/LogoutButton'
 
+function NavBar() {
+    const { auth, username } = useContext(AuthContext)
+
+    // Navbar status
     const [navbar, setNavbar] = useState(false)
 
     const scrooledWindow = () => {
         if (window.scrollY > 0) {
             setNavbar(true)
-            console.log("Navbar: true")
         }
         else {
             setNavbar(false)
-            console.log("Navbar: false")
         }
     }
 
     window.addEventListener('scroll', scrooledWindow)
 
+    // DropDown
     const [isActive, setActive] = useState(false)
     const handleToggle = () => {
         setActive(!isActive)
@@ -56,6 +65,7 @@ function NavBar() {
         handleDropdownClose();
     }
 
+    // Modal
     const [hidden, setHidden] = useState(false);
 
     const toggleHidden = () => {
@@ -98,7 +108,7 @@ function NavBar() {
                     </ul>
                 </div>
                 <Link to="/">
-                    <img src={logo} alt="Logo FindForMe" className={!isActive ? `${styles.active}` : `${styles.notactive}` } />
+                    <img src={logo} alt="Logo FindForMe" className={!isActive ? `${styles.active}` : `${styles.notactive}`} />
                 </Link>
                 <div className={isActive ? `${styles.navBarControl} ${styles.active}` : `${styles.navBarControl}`}>
                     <ul className={styles.list}>
@@ -128,19 +138,39 @@ function NavBar() {
                                     <div className={styles.cart_items}>
                                         <div className={styles.cart_item}>
                                             <li className={styles.item}>
-                                                <Link to="/profile">Gerenciar perfil</Link>
+                                                {auth &&
+                                                    <div className={styles.myAccountContainer}>
+                                                        <div className={styles.myAccountImage}>
+                                                            <img src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' alt='Profile Image' title='Profile Image' />
+                                                        </div>
+                                                        <div className={styles.myAccountName}>
+                                                            <h2>{username}</h2>
+                                                        </div>
+                                                    </div>
+                                                }
                                             </li>
-                                            <li className={`${styles.item} ${styles.item_donates} `}>
-                                                <Link to="/management">Minhas doações</Link>
-                                            </li>
-                                            <li className={`${styles.item} ${styles.item_in} `}>
-                                                <Link to="/signin">Entrar</Link>
-                                            </li>
-                                            <li className={`${styles.item} ${styles.item_in} `}>
-                                                <Link to="/signup">Inscrever-se</Link>
-                                            </li>
+                                            {auth &&
+                                                <>
+                                                    <li className={styles.item}>
+                                                        <Link to="/profile">Gerenciar perfil</Link>
+                                                    </li>
+                                                    <li className={`${styles.item} ${styles.item_donates} `}>
+                                                        <Link to="/management">Minhas doações</Link>
+                                                    </li>
+                                                </>
+                                            }
+                                            {!auth &&
+                                                <>
+                                                    <li className={`${styles.item} ${styles.item_in} `}>
+                                                        <Link to="/signin">Entrar</Link>
+                                                    </li>
+                                                    <li className={`${styles.item} ${styles.item_in} `}>
+                                                        <Link to="/signup">Inscrever-se</Link>
+                                                    </li>
+                                                </>
+                                            }
                                             <li className={`${styles.item} ${styles.item_exit}`}>
-                                                <Link to="/logout">Sair</Link>
+                                                {auth && <LogoutButton />}
                                             </li>
                                         </div>
                                     </div>

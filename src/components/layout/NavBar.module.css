@@ -235,9 +235,52 @@
     gap: 10px;
 }
 
+.myAccountContainer {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    background-color: whitesmoke;
+    padding: 10px;
+    color: #222;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.myAccountImage {
+    position: relative;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    border-radius: 10px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
 
-.cart_dropdown .cart_item img {
+.myAccountName {
+    position: relative;
+    display: flex;
+    color: #222;
+    font-size: 7pt;
+    text-align: center;
+    margin: auto;
+}
+
+.myAccountImage>img {
+    position: relative;
+    display: flex;
+    width: 100% !important;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart_dropdown>.cart_item>img {
     width: 30%;
 }
 

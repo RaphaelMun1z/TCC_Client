@@ -1,11 +1,15 @@
 import styles from './Signin.module.scss'
-import React, { useState } from 'react';
-import { FaHandshake } from 'react-icons/fa';
+import React, { useState, useContext } from 'react';
+import { toast } from "react-toastify"
+import { useNavigate, Navigate } from "react-router-dom";
+import Axios from "axios"
+import { AuthContext } from '../../../Contexts/AuthContext';
 
 function Signin() {
+    const navigate = useNavigate();
 
     const [user, setUser] = useState({
-        username: "",
+        email: "",
         password: ""
     });
 
@@ -17,9 +21,30 @@ function Signin() {
         }));
     };
 
-    const handleSubmit = (event) => {
+    Axios.defaults.withCredentials = true;
+
+    const { setAuth, auth, setUsername } = useContext(AuthContext)
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(user);
+
+        try {
+            Axios.post("http://localhost:3001/login", {
+                email: user.email,
+                password: user.password,
+            }).then((response) => {
+                if (response.data.message) {
+                    toast.error("Email e/ou senha incorretos!");
+                } else {
+                    setAuth(true)
+                    setUsername(response.data[0].firstname)
+                    toast.success("Seja bem vindo(a) " + response.data[0].firstname + "!");
+                    navigate("/management")
+                }
+            });
+        } catch (error) {
+            toast.warn('Ocorreu um erro ao logar!')
+        }
     };
 
     return (
@@ -30,12 +55,12 @@ function Signin() {
                 </div>
                 <div className={styles.formcontainer}>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="username">Usuário</label>
+                        <label htmlFor="email">Email</label>
                         <input
-                            type="text"
-                            name="username"
-                            id="username"
-                            value={user.username}
+                            type="email"
+                            name="email"
+                            id="email"
+                            value={user.email}
                             onChange={handleChange}
                         />
                         <label htmlFor="password">Senha</label>

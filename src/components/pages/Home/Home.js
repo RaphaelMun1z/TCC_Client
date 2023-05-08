@@ -13,8 +13,8 @@ function Home() {
         <>
             <Landing />
             <ContentCards />
-            <HowItWorks/>
-            <Contact/>
+            <HowItWorks />
+            <Contact />
         </>
     )
 }
